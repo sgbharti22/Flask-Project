@@ -1,0 +1,107 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}
+Link Tree
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='starter-template.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+{% endblock %}
+
+{% block content %}
+ <style>
+    body{
+      background-image: url({{url_for('static',filename='1.jpg')}});
+      background-repeat:no-repeat;
+      background-attached:fixed;
+      background-size:cover;
+      
+    }
+ </style>
+
+ <div class="slider">
+
+</div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url_for('index') }}">LINK TREE</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+            <li><a href="{{ url_for('know') }}">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+<h1 style="text-align: center; color: black;font-family: Algerian;"> FAST !! FRIENDLY !! POWERFUL !!</h1>
+
+<article class="container">
+<div style="background: url(proimg.jpg);" >
+  <h2 style="text-align:center;color:red;font-family: Garamond">What is a LinkTree ?</h2>
+      <h3 style="color: blue;font-family: Garamond;text-align: right;">
+      	Linktree is a single link that you can use to reveal everything you’re sharing, everywhere you’re sharing it – all in one place. You can add this personalized URL to your bio on any social media platform, in your email signatures, on business cards, and anywhere your followers, visitors and customers might discover or interact with you.
+       </h3>
+<div>
+</article>
+<br>
+<br>
+<br>
+
+<article class="container">
+  <h2 style="text-align:center;color:red;font-family: Garamond">What is LinkTree used for ?</h2>
+	<h3 style="text-align:right; color: blue;font-family: Garamond">
+                        Linktree is a platform that enables you to share more than one link from your social media bios. It’s used on social media, email signatures, video descriptions, show notes, live streams, webinars and even in the offline world using QR codes to connect people to your online identity.
+	</h3>
+
+</article>
+
+
+<br>
+<br>
+<br>
+
+<article class="container">
+  <h2 style="text-align:center;color:red;font-family: Garamond">Why do i need a LinkTree ?</h2>
+  <h3 style="text-align:right; color: blue;font-family: Garamond">
+                        Linktree is a single link that you can use to connect audiences to everything you are, everything you do and everything you care about. It enables you to share many links in one, so your followers, visitors and customers can find everything they’re looking for in one place.
+
+You can add it to your bio link on social media platforms like Tiktok and Instagram, include it in your email signatures, and even display it as a QR code to get your offline audiences connected with you online. Linktree is for everyone – that’s why more than 25 million creators already swear by it!
+  </h3>
+
+</article>
+
+
+<br>
+<br>
+<br>
+
+<article class="container">
+  <h2 style="text-align:center;color:red;font-family: Garamond">Is Linktree safe to use on all of my social media profiles ?</h2>
+  <h3 style="text-align:right; color: blue;font-family: Garamond">
+                        Linktree is trusted by all social platforms, and is even used on many of Facebook, Instagram and TikTok’s own social media accounts! Because Linktree is the original and most popular link-in-bio tool, the linktr.ee URL is a trusted, identifiable and familiar link that audiences feel comfy and safe clicking on.
+  </h3>
+
+</article>
+
+<br>
+<br>
+<br>
+
+<article class="container">
+      <h4 style="text-align:center;">Home page<a href="{{ url_for('index') }}">  Back</a></h4>
+</article>
+{% endblock %}

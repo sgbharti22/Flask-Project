@@ -1,0 +1,83 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}
+Link Tree
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='starter-template.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+{% endblock %}
+
+{% block content %}
+ <style>
+    body{
+      background-image: url({{url_for('static',filename='1.jpg')}});
+      background-repeat:no-repeat;
+      background-attached:fixed;
+      background-size:cover;
+      
+    }
+ </style>
+<div class="slider">
+
+</div>
+    <article class="media content-section">
+    <div style="text-align: center;">
+    
+    <h1 style="font-family: Garamond"><a class="article-title" href="#"><bold>Everything you are.In one simple link</bold></a></h1>
+    
+    
+  </div>
+   </article>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container" >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url_for('index') }}">LINK TREE</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+            <li><a href="{{ url_for('know') }}">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<marquee scrollamount="16" direction="left">
+<h1 style="text-align: center; color: red;font-family: Algerian;"> FAST !! FRIENDLY !! POWERFUL !!</h1>
+</marquee>
+    <div class="container">
+
+      <form class="form-signin" method="POST" action="/">
+        <div class="error-msg"><p>{{ error_msg }}</p></div>
+        <h2 class="form-signin-heading" style="text-align: center; color: blue;font-family: Garamond;">Know Your Best Ones</h2>
+        <small style="text-align:center">Enter Username</small>
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.treename) }}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+      </form>
+
+    </div><!-- /.container -->
+<article class="media content-section">
+   <h2 style="text-align:center;color: red;font-family: Garamond;">
+    The easiest place to update and share your content
+    Help your followers discover everything you’re sharing all over the internet, in one simple place. They’ll thank you for it!
+   </h2>
+</article>
+
+<article class="media content-section" style="font-family: Garamond">
+      <h4 style="text-align:center; color: blue;">Hurry Up! Guys<a href="{{ url_for('signup') }}">   Sign In</a></h4>
+</article>
+<br><br><br>
+<p class="article-content" style="color: red; text-align: center;"><i>LCC-Projectify-Web Development<i></p>
+{% endblock %}
